@@ -1,0 +1,46 @@
+body{
+
+}
+header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+ul{
+    display: flex;
+
+    justify-content: space-around;
+}
+
+ul>li{
+    list-style: none;
+}
+h1{
+    text-align: center;
+}
+.container{
+   
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(300px,1fr)
+    );
+    gap: 1rem;
+}
+.targeta{
+    background-color: aqua;
+    color: black;
+    height: max-content;
+    
+}
+.like{
+    display: flex;
+    justify-content:space-around;
+   
+   
+}
+
+img{
+ width: 150px;
+ height: 150px;
+}

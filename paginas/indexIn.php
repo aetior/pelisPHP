@@ -1,11 +1,7 @@
 <?php 
-
  include("../controller.php");
  include("../elementos/tarjeta.php");
  $tarjeta = new Tarjeta(); 
- if(!isset($_SESSION["user"])){
-    header("Location: ../index.php");
- }
 ?>
 
 <!DOCTYPE html>
@@ -19,27 +15,27 @@
 <body>
     <!--  ***************************************  -->
     <header>
-        <form action="../index.php" method="POST">
-             <input type="submit" value="salir" name="salir">
+        <form action=""method="POST">
+            <input type="hidden" name="loggout">
+             <input type="submit"value="salir">
         </form>
         <div class="logo">
-        <img src="../public/logo.png" alt="logo">
+            <img src="../public/logo.png" alt="logo">
         </div>
         <nav>
-        
             <ul>
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="./añadirPeli.php">Añadir</a></li>
-                <li><a href="">Favoritos</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="../paginas/añadirPeli.php">Añadir</a></li>
+                <li><a href="../paginas/favPelis.php">Favoritos</a></li>
             </ul>
         </nav>
     </header> 
     <!--  ***************************************  -->
- 
     <main>
-    <h1>FAVORITOS</h1>
+    <h1>TODO</h1>
         <div class="container">
-            <?= $tarjeta->mostrarTarjetaFav()?>
+           <?php
+            $tarjeta->mostrarTarjeta();?>
         </div>   
     </main>
 

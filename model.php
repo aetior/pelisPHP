@@ -110,4 +110,18 @@ function validarUsuario($name, $pass){
     // Cerrar la sentencia y la conexión
     $stmt->close();
     $conn->close();
+    
+    
 }
+ 
+
+    // function comprobar($user, $pass){
+    //     $array = array("aitor","test");
+    //         if($user == $array[0] && $pass == $array[1]){
+    //           session_start();
+    //             return true;
+    //         }else{
+    //             return false;
+    //         }
+    //     }
+    

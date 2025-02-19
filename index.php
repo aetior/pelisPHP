@@ -1,6 +1,9 @@
 <?php 
+
  include("controller.php");
  include("./elementos/tarjeta.php");
+
+print_r($_SESSION);
  $tarjeta = new Tarjeta(); 
 ?>
 
@@ -21,15 +24,28 @@
             <input type="text" name="pass" placeholder="contraseña">
             <input type="submit" value="entrar">
         </form>
+        <form action="" method="POST">
+             <input type="submit" value="salir" name="salir">
+        </form>
+
         <div class="logo">
             <img src="public/logo.png" alt="logo">
         </div>
         <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="./paginas/añadirPeli.php">Añadir</a></li>
-                <li><a href="./paginas/favPelis.php">Favoritos</a></li>
-            </ul>
+            <?php
+                if(isset($_SESSION["user"])){
+                if($_SESSION["user"]=="aitor"){
+                    echo '              
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="./paginas/añadirPeli.php">Añadir</a></li>
+                        <li><a href="./paginas/favPelis.php">Favoritos</a></li>
+                    </ul>       
+                    ';
+            }}
+                
+                ?>
+    
         </nav>
     </header> 
     <!--  ***************************************  -->

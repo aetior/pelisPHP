@@ -1,5 +1,6 @@
 <?php
 include("model.php");
+session_start();
 // include("./elementos/tarjeta.php");
 //eliminar
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
@@ -49,10 +50,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loggin'])){
     $name = $_POST['user'];
     $pass = $_POST['pass'];
     if (validarUsuario($name,$pass)) {
+    $_SESSION["user"]="aitor";
         echo "Usuario válido.";
     } else {
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+        exit();
         echo "Usuario o contraseña incorrectos.";
     }
 }
-
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['salir'])){
+    session_unset();
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
 ?>

@@ -21,6 +21,9 @@ if (!empty($id) && is_numeric($id)) {
 } else {
     die("ID inválido o no proporcionado."); // Evita consultas erróneas
 }
+if(!isset($_SESSION["user"])){
+    header("Location: ../index.php");
+ }
 ?>
 
 <!DOCTYPE html>

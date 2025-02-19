@@ -7,25 +7,30 @@
     <link href="../styles/styleAñadir.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Agregar Película</h2>
+
+    <h1>Añade tu Pelicula</h1>
     <div class="container">
-        <div></div>
-    <form action="../index.php" method="POST">
-        <label for="titulo">Título</label>
-        <input type="text" name="titulo" required>
+        <img src="../public/logo.png" alt="Logo de la aplicación">
 
-        <label for="imagen">Imagen</label>
-        <input type="text" name="imagen" required>
+        <form action="../index.php" method="POST">
+            <fieldset>
+                <legend>Detalles de la Película</legend>
 
-        <label for="descripcion">Descripción</label>  
-        <input type="text" name="descripcion" required>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" required placeholder="Ingrese el título">
 
-        <input type="hidden" name="secreto" value="12345">
+                <label for="imagen">Imagen (URL)</label>
+                <input type="url" id="imagen" name="imagen" required placeholder="Ingrese la URL de la imagen" >
 
-        <input type="submit" value="Enviar" >
-        <a href="../index.php">Volver</a>
-    </form>
- 
+                <label for="descripcion">Descripción</label>  
+                <textarea id="descripcion" name="descripcion"  rows="20" cols="100"required placeholder="Ingrese la descripción"></textarea>
+
+                <input type="hidden" name="secreto" value="12345">
+
+                <input type="submit" value="Enviar">
+                <a href="../index.php">Volver</a>
+            </fieldset>
+        </form>
     </div>
 
 </body>

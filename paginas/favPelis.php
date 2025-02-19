@@ -16,7 +16,7 @@
     <!--  ***************************************  -->
     <header>
         <div class="logo">
-            <img src="https://picsum.photos/80/80" alt="Imagen de prueba">
+        <img src="../public/logo.png" alt="logo">
         </div>
         <nav>
         

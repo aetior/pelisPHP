@@ -34,7 +34,12 @@ if (!empty($id) && is_numeric($id)) {
 <body>
     <h2>Ver Pelicula</h2>
     <form method="POST" action="../controller.php"> <!-- Envia a controller.php -->
-        <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
+        <fieldset>
+            <figure>
+
+                <img src="<?=$img?>" alt="" class="imgVerMas">
+            </figure>
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 
         <label for="titulo">Título:</label>
         <input type="text" id="titulo" name="titulo" value="<?php echo htmlspecialchars($titulo); ?>" disabled>
@@ -43,7 +48,7 @@ if (!empty($id) && is_numeric($id)) {
         <label for="descripcion">Descripción:</label>
         <textarea id="descripcion" name="descripcion" disabled><?php echo htmlspecialchars($descripcion); ?></textarea>
 
-       
+        </fieldset>
     </form>
     <a href="../index.php">Atrás</a>
 </body>

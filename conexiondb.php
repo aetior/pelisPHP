@@ -22,10 +22,7 @@ class Conexiondb {
         return $this->conn;
     }
 
-
 }
-
-$conexion = new Conexiondb();
 
 // Instanciar la conexión
 ?>

@@ -34,6 +34,7 @@ if (!empty($id) && is_numeric($id)) {
 <body>
     <h2>Editar Película</h2>
     <form method="POST" action="../controller.php"> <!-- Envia a controller.php -->
+        <fieldset>
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 
         <label for="titulo">Título:</label>
@@ -46,6 +47,7 @@ if (!empty($id) && is_numeric($id)) {
         <textarea id="descripcion" name="descripcion" required><?php echo htmlspecialchars($descripcion); ?></textarea>
 
         <button type="submit" name="guardar_edicion">Guardar Cambios</button>
+    </fieldset>
     </form>
     <a href="../index.php">Atrás</a>
 </body>

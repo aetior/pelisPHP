@@ -66,3 +66,48 @@ function editarPelicula($id, $titulo, $img, $descripcion) {
     
     $stmt->close();
 }
+function validarUsuario($name, $pass){
+    // Crear la conexión a la base de datos
+    $conexionDB = new Conexiondb();
+    $conn = $conexionDB->getConexion();
+    
+    // Consulta SQL para seleccionar el usuario y la contraseña
+    $sql = "SELECT user, pass FROM usuarios WHERE user = ?";
+    
+    // Preparar la consulta
+    $stmt = $conn->prepare($sql);
+    
+    // Vincular el parámetro (usuario), el tipo "s" es para string
+    $stmt->bind_param("s", $name);
+    
+    // Ejecutar la consulta
+    $stmt->execute();
+    
+    // Guardar los resultados
+    $stmt->store_result();
+    
+    // Verificar si se encontró el usuario
+    if ($stmt->num_rows > 0) {
+        // Vincular los resultados a las variables
+        $stmt->bind_result($user, $storedPass);
+        
+        // Obtener el resultado
+        $stmt->fetch();
+        
+        // Verificar si la contraseña coincide
+        if ($pass === $storedPass) {
+            echo "todo ok"; // Contraseña correcta
+            return true; // Usuario y contraseña válidos
+        } else {
+            echo "contraseña incorrecta"; // Contraseña incorrecta
+            return false; // Contraseña incorrecta
+        }
+    } else {
+        echo "usuario no encontrado"; // Usuario no encontrado
+        return false; // Usuario no encontrado
+    }
+    
+    // Cerrar la sentencia y la conexión
+    $stmt->close();
+    $conn->close();
+}

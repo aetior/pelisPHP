@@ -44,4 +44,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['guardar_edicion'])) {
 
     editarPelicula($id, $titulo, $img, $descripcion);
 }
+
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loggin'])){
+    $name = $_POST['user'];
+    $pass = $_POST['pass'];
+    if (validarUsuario($name,$pass)) {
+        echo "Usuario válido.";
+    } else {
+        echo "Usuario o contraseña incorrectos.";
+    }
+}
+
 ?>

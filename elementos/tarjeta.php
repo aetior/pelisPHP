@@ -34,7 +34,7 @@ class Tarjeta {
             foreach ($datos as $dato) {
                 echo '<div class="targeta">
                          <img src="'. htmlspecialchars($dato['img']) .'" alt="">
-                         <h1>Titulo: '. htmlspecialchars($dato['titulo']) .'</h1>
+                         <h1>'. htmlspecialchars($dato['titulo']) .'</h1>
                          <p>Descripcion: '. htmlspecialchars($dato['id']) .' <a href="paginas/verMas.php?id='.intval($dato['id']).'">ver más</a></p>
                          <form class="like" method="POST">
                              <button type="submit" name="like" value="1">Like</button>
@@ -55,9 +55,9 @@ class Tarjeta {
         foreach ($datos as $dato){
             if($dato["liked"]==1){
             echo '<div class="targeta">
-                         <img src="'. htmlspecialchars($dato['img']) .'" alt="">
-                         <h1>Titulo: '. htmlspecialchars($dato['titulo']) .'</h1>
-                         <p>Descripcion: '. htmlspecialchars($dato['id']) .' <a href="">ver más</a></p>
+                         <img src="'. htmlspecialchars($dato['img']) .'" class="imgTarjera"alt="">
+                         <h1>'. htmlspecialchars($dato['titulo']) .'</h1>
+                         <p>Descripcion: '. htmlspecialchars($dato['id']) .' <a href="verMas.php?id='.intval($dato['id']).'">ver más</a></p>
                          <form class="like" method="POST">
                              <button type="submit" name="like" value="1">Like</button>
                              <button type="submit" name="like" value="0">Dislike</button>

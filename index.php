@@ -15,8 +15,14 @@
 <body>
     <!--  ***************************************  -->
     <header>
+        <form action=""method="POST">
+            <input type="hidden" name="loggin">
+            <input type="text" name="user" placeholder="usuario">
+            <input type="text" name="pass" placeholder="contraseña">
+            <input type="submit" value="entrar">
+        </form>
         <div class="logo">
-            <img src="https://picsum.photos/80/80" alt="Imagen de prueba">
+            <img src="public/logo.png" alt="logo">
         </div>
         <nav>
             <ul>

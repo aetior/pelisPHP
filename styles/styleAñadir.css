@@ -1,16 +1,46 @@
-form{
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset{
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
+    background-color: bisque;
 }
-h2{
+h1{
     text-align: center;
+    margin: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .container{
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    height: 100vh; 
+    
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.logo>img{
+    width: 200px;
+}
+.imgVerMas{
+    width: 500px;
+
+ 
+}
+figure{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+a {
+    text-decoration: none;  /* Elimina el subrayado */
+    color: inherit;         /* Hereda el color del texto del contenedor */
+    background: none;       /* Elimina el fondo */
 }
